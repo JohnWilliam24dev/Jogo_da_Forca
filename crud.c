@@ -30,6 +30,3 @@ void crud(){
     fclose(palavra_escolhida);
     
 }
-int main(){
-    crud();
-}
