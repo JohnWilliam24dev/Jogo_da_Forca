@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
-char *crud(){
+void crud(){
+    system("clear");
     setlocale(LC_ALL, "portuguese");
     FILE *arquivo = fopen("palavras.txt","r");
     if (arquivo == NULL){
@@ -19,17 +20,16 @@ char *crud(){
 
     }
 
-    int x=rand()%30;
-    char *palavra_escolhida=palavras[x];
-    ///printf("%s debug 1",palavras[x]);
-  
+    int x=rand()%50;
+   
+    printf("debug 1: %s ",palavras[x]);
+    
     fclose(arquivo);
-
-    return (palavra_escolhida);
+    FILE *palavra_escolhida=fopen("palavra_escolhida.txt","w");
+    fprintf(palavra_escolhida,("%s",palavras[x]));
+    fclose(palavra_escolhida);
+    
 }
 int main(){
-    system("clear");
-    char *Palavra_sorteada;
-    Palavra_sorteada=crud();
-    printf(" debug 2 %s",Palavra_sorteada);
+    crud();
 }
