@@ -8,7 +8,6 @@ void crud(){
     FILE *arquivo = fopen("palavras.txt","r");
     if (arquivo == NULL){
         printf("Não foi possivel encontrar arquivo de geração ");
-
     }
     char palavras[50][50];
     int cont=0;
@@ -17,19 +16,13 @@ void crud(){
 
     while(fgets(palavras[cont],50,arquivo) !=NULL){
         cont++;
-
     }
 
     int x=rand()%40;
-   
-    
-    
+
     fclose(arquivo);
     FILE *palavra_escolhida=fopen("palavra_escolhida.txt","w");
     fprintf(palavra_escolhida,("%s",palavras[x]));
     fclose(palavra_escolhida);
     
 }
-
-
-    
